@@ -47,8 +47,12 @@ appendStr is a C function which increases the size of buffer to append formated 
         free(buf);
     }
 
-* Run `gcc -o example *.c` to build example binary.
+#### Build Example
  
+    ./autogen.sh
+    ./configure
+    ./make
+
 #### LICENSE
 * [MIT License](./LICENSE)
 
