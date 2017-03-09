@@ -1,6 +1,6 @@
 # appendStr()
 
-appendStr increases the size of buffer to append formated string.
+appendStr is a C function which increases the size of buffer to append formated string.
 
 #### Documentation
 
