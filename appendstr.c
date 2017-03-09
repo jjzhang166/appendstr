@@ -30,16 +30,16 @@ char *appendStr(char *buf, char *fmt, ...) {
     int n, nBytes, l = 0;
     char *newBuf, *tmpBuf = NULL;
     va_list args1, args2;
-    char fixedBuffer[64] = {0};
-    char *inputStr = fixedBuffer;
+    char fixedBuf[64] = {0};
+    char *inputStr = fixedBuf;
 
     va_start(args1, fmt);
     va_copy(args2, args1);
 
     // Get formated input string buffer.
-    // If n > 0 and n <= sizeof(fixedBuffer), vsnprintf() succeeded,
+    // If n > 0 and n <= sizeof(fixedBuf), vsnprintf() succeeded,
     // n = the size of formated string(not including '\0').    
-    n = vsnprintf(fixedBuffer, sizeof(fixedBuffer), fmt, args1);
+    n = vsnprintf(fixedBuf, sizeof(fixedBuf), fmt, args1);
 
     if (n < 0) {
         printf("appendStr(): vsnprintf() return < 0: %d\n", n);
@@ -49,7 +49,7 @@ char *appendStr(char *buf, char *fmt, ...) {
     // Fixed buffer is not large enough.
     // n = the size of formated string(not including '\0').
     // Use malloc() to allocate a new buffer to store formated input string.
-    if (n > sizeof(fixedBuffer)) {
+    if (n > sizeof(fixedBuf)) {
         tmpBuf = malloc(sizeof(char) * (n + 1));
         if (tmpBuf == NULL) {
             printf("appendStr() error: tmpBuf = malloc(%d) failed.\n", n + 1);
