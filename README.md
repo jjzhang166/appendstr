@@ -1,5 +1,7 @@
 # appendStr()
 
+[![Build Status](https://travis-ci.org/northbright/appendstr.svg?branch=master)](https://travis-ci.org/northbright/appendstr)
+
 appendStr is a C function which increases the size of buffer to append formated string.
 
 #### Documentation
